@@ -1,540 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlockBlitz — Neon Block Puzzle Game</title>
-    <meta name="description" content="BlockBlitz is the ultimate neon block puzzle game. Two game modes, daily missions, global leaderboards, and collectible skins. Free on the App Store.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlockBlitz: Neon Block Puzzle Game</title>
+<meta name="description" content="Clear lines, chain combos and crack the Endless secret. A free neon block puzzle for iPhone with 66 shapes, 7 skins and daily rewards.">
+<meta name="theme-color" content="#0f0828">
+<meta property="og:title" content="BlockBlitz: Neon Block Puzzle Game">
+<meta property="og:description" content="Clear lines, chain combos and crack the Endless secret. A free neon block puzzle for iPhone with 66 shapes, 7 skins and daily rewards.">
+<meta property="og:image" content="https://blockblitz.ma/assets/og-image.jpg">
+<meta property="og:url" content="https://blockblitz.ma/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/assets/favicon-64.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
-
-    <!-- SNOW CANVAS -->
-    <canvas id="snow-canvas"></canvas>
-
-    <!-- NAV -->
-    <nav id="navbar">
-        <a href="/" class="logo">BlockBlitz</a>
-        <div class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#modes">Game Modes</a>
-            <a href="/about.html">About</a>
-            <a href="/privacy.html">Privacy</a>
-        </div>
-        <a href="#" class="nav-cta">Download Free</a>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-bg">
-            <div class="orb orb-1"></div>
-            <div class="orb orb-2"></div>
-            <div class="orb orb-3"></div>
-            <div class="grid-lines"></div>
-        </div>
-
-        <div class="hero-content">
-            <div class="badge">
-                <span class="badge-dot"></span>
-                Free on App Store
-            </div>
-            <h1>Drop. Stack.<br><span class="gradient-text">Obliterate.</span></h1>
-            <p>The neon block puzzle that rewards clever moves. Build massive combos, collect rare skins, and fight for the top of the global leaderboard.</p>
-            <div class="hero-actions">
-                <a href="#" class="btn btn-primary">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M14.5 10.6c-.1-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.5.8-3.1.8-.7 0-1.7-.8-2.8-.7-1.4 0-2.7.8-3.5 2.1-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.5 2.2 2.6 2.1 1-.1 1.4-.7 2.7-.7 1.2 0 1.6.7 2.7.6 1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.3 0 0-2.1-.8-2.1-3.5z" fill="white"/>
-                        <path d="M12.4 4.1c.6-.7 1-1.7.9-2.7-.9.1-2 .6-2.6 1.3-.6.6-1.1 1.7-.9 2.7 1 .1 1.9-.5 2.6-1.3z" fill="white"/>
-                    </svg>
-                    Download on App Store
-                </a>
-                <a href="#features" class="btn btn-ghost">See Features</a>
-            </div>
-        </div>
-
-        <!-- Phone Mockups -->
-        <div class="hero-phones">
-            <!-- Phone 1: Gameplay -->
-            <div class="phone phone-left">
-                <div class="phone-frame">
-                    <div class="phone-notch"></div>
-                    <div class="phone-screen game-screen">
-                        <div class="gs-header">
-                            <div class="gs-score">
-                                <span class="gs-label">SCORE</span>
-                                <span class="gs-value">42,800</span>
-                            </div>
-                            <div class="gs-combo">
-                                <span class="combo-badge">x4 COMBO</span>
-                            </div>
-                            <div class="gs-score">
-                                <span class="gs-label">BEST</span>
-                                <span class="gs-value">98,400</span>
-                            </div>
-                        </div>
-                        <div class="game-board">
-                            <div class="board-row">
-                                <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-                            </div>
-                            <div class="board-row">
-                                <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-                            </div>
-                            <div class="board-row">
-                                <div class="cell"></div><div class="cell"></div><div class="cell block-purple"></div><div class="cell block-purple"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-                            </div>
-                            <div class="board-row">
-                                <div class="cell"></div><div class="cell"></div><div class="cell block-purple"></div><div class="cell block-cyan"></div><div class="cell block-cyan"></div><div class="cell"></div><div class="cell"></div>
-                            </div>
-                            <div class="board-row">
-                                <div class="cell"></div><div class="cell block-pink"></div><div class="cell block-pink"></div><div class="cell block-cyan"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
-                            </div>
-                            <div class="board-row">
-                                <div class="cell block-cyan"></div><div class="cell block-pink"></div><div class="cell block-yellow"></div><div class="cell block-yellow"></div><div class="cell block-yellow"></div><div class="cell block-purple"></div><div class="cell"></div>
-                            </div>
-                            <div class="board-row clear-row">
-                                <div class="cell block-pink"></div><div class="cell block-cyan"></div><div class="cell block-yellow"></div><div class="cell block-purple"></div><div class="cell block-pink"></div><div class="cell block-purple"></div><div class="cell block-cyan"></div>
-                            </div>
-                        </div>
-                        <div class="piece-tray">
-                            <div class="tray-piece">
-                                <div class="mini-row"><div class="mini-cell mp-purple"></div><div class="mini-cell mp-purple"></div></div>
-                                <div class="mini-row"><div class="mini-cell mp-purple"></div><div class="mini-cell"></div></div>
-                            </div>
-                            <div class="tray-piece tray-active">
-                                <div class="mini-row"><div class="mini-cell mp-cyan"></div><div class="mini-cell mp-cyan"></div><div class="mini-cell mp-cyan"></div></div>
-                            </div>
-                            <div class="tray-piece">
-                                <div class="mini-row"><div class="mini-cell mp-pink"></div></div>
-                                <div class="mini-row"><div class="mini-cell mp-pink"></div></div>
-                                <div class="mini-row"><div class="mini-cell mp-pink"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Phone 2: Home Screen (center) -->
-            <div class="phone phone-center">
-                <div class="phone-frame">
-                    <div class="phone-notch"></div>
-                    <div class="phone-screen home-screen">
-                        <div class="hs-topbar">
-                            <span class="hs-logo">BlockBlitz</span>
-                            <div class="hs-currency">
-                                <span class="currency-pill">⭐ 14</span>
-                                <span class="currency-pill je">💎 3,200</span>
-                            </div>
-                        </div>
-                        <div class="hs-skins">
-                            <div class="hs-section-label">SKIN COLLECTION</div>
-                            <div class="skins-row">
-                                <div class="skin-card skin-cyan">
-                                    <div class="skin-icon">◼</div>
-                                    <div class="skin-name">Classic</div>
-                                    <div class="skin-status equipped">Equipped</div>
-                                </div>
-                                <div class="skin-card skin-purple">
-                                    <div class="skin-icon">◼</div>
-                                    <div class="skin-name">Neon</div>
-                                    <div class="skin-status">1500 JE</div>
-                                </div>
-                                <div class="skin-card skin-orange">
-                                    <div class="skin-icon">◼</div>
-                                    <div class="skin-name">Magma</div>
-                                    <div class="skin-status">1500 JE</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hs-missions">
-                            <div class="mission-row">
-                                <span class="mission-icon">✓</span>
-                                <div class="mission-info">
-                                    <div class="mission-title">Daily Missions</div>
-                                    <div class="mission-sub">Earn Magic Wands &amp; God Mode!</div>
-                                </div>
-                                <span class="mission-arrow">›</span>
-                            </div>
-                        </div>
-                        <div class="hs-stats">
-                            <div class="hs-section-label">YOUR PROGRESS</div>
-                            <div class="stat-row">
-                                <span class="stat-icon" style="color:#FFD700">🏆</span>
-                                <span class="stat-name">Best Score</span>
-                                <span class="stat-val">98,400</span>
-                            </div>
-                            <div class="stat-divider"></div>
-                            <div class="stat-row">
-                                <span class="stat-icon" style="color:#00f3ff">⭐</span>
-                                <span class="stat-name">Total Stars</span>
-                                <span class="stat-val">14</span>
-                            </div>
-                            <div class="stat-divider"></div>
-                            <div class="stat-row">
-                                <span class="stat-icon" style="color:#FF6B35">🔥</span>
-                                <span class="stat-name">Streak</span>
-                                <span class="stat-val">7 Days</span>
-                            </div>
-                        </div>
-                        <div class="hs-play-buttons">
-                            <div class="play-btn blue-btn">ENDLESS</div>
-                            <div class="play-btn purple-btn">PLAY</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Phone 3: Store -->
-            <div class="phone phone-right">
-                <div class="phone-frame">
-                    <div class="phone-notch"></div>
-                    <div class="phone-screen store-screen">
-                        <div class="store-header">
-                            <span class="store-title">BLOCKBLITZ STORE</span>
-                        </div>
-                        <div class="store-card">
-                            <div class="store-card-glow"></div>
-                            <div class="store-icon">🪄</div>
-                            <div class="store-card-name">Magic Wand</div>
-                            <div class="store-card-desc">Clear any 3×3 block area instantly</div>
-                            <div class="store-price">500 💎</div>
-                        </div>
-                        <div class="store-card store-card-cyan">
-                            <div class="store-card-glow glow-cyan"></div>
-                            <div class="store-icon">🎁</div>
-                            <div class="store-card-name">Quantum Box</div>
-                            <div class="store-card-desc">Unbox rare skins &amp; rewards</div>
-                            <div class="store-price">200 💎</div>
-                        </div>
-                        <div class="store-dots">
-                            <div class="dot active"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FEATURE STRIP -->
-    <div class="feature-strip">
-        <div class="strip-item">
-            <span class="strip-icon">🎮</span>
-            <span>Two Game Modes</span>
-        </div>
-        <div class="strip-divider"></div>
-        <div class="strip-item">
-            <span class="strip-icon">🏆</span>
-            <span>Global Leaderboards</span>
-        </div>
-        <div class="strip-divider"></div>
-        <div class="strip-item">
-            <span class="strip-icon">🎨</span>
-            <span>5 Collectible Skins</span>
-        </div>
-        <div class="strip-divider"></div>
-        <div class="strip-item">
-            <span class="strip-icon">🔥</span>
-            <span>Daily Missions</span>
-        </div>
-        <div class="strip-divider"></div>
-        <div class="strip-item">
-            <span class="strip-icon">⚡</span>
-            <span>Massive Combos</span>
-        </div>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/"><img src="/assets/icon-512.png" alt=""><span>BLOCK<span class="blitz">BLITZ</span></span></a>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#endless">Endless Secret</a>
+      <a href="/#skins">Skins</a>
+      <a href="/#whats-new">What's New</a>
+      <a href="/support.html">Support</a>
     </div>
+    <a class="btn btn-primary btn-small" href="/#download">Coming soon</a>
+  </div>
+</nav>
+<main>
+<!-- HERO -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="pill"><span class="dot"></span>Free on iPhone · Coming soon</span>
+      <h1>Clear lines.<br>Chain combos.<br><span class="grad">Crack the Endless.</span></h1>
+      <p class="lead">BlockBlitz is a neon block puzzle that rewards smart moves. Drop pieces on an 8×8 board, clear rows and columns, build combos and try to solve the secret no one has cracked yet.</p>
+      <div class="hero-actions">
+        <a class="appstore-badge" href="#download"><svg viewBox="0 0 20 20" fill="white" aria-hidden="true"><path d="M14.5 10.6c-.1-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.5.8-3.1.8-.7 0-1.7-.8-2.8-.7-1.4 0-2.7.8-3.5 2.1-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.5 2.2 2.6 2.1 1-.1 1.4-.7 2.7-.7 1.2 0 1.6.7 2.7.6 1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.3 0 0-2.1-.8-2.1-3.5z"/><path d="M12.4 4.1c.6-.7 1-1.7.9-2.7-.9.1-2 .6-2.6 1.3-.6.6-1.1 1.7-.9 2.7 1 .1 1.9-.5 2.6-1.3z"/></svg><span><small>Coming soon on the</small><strong>App Store</strong></span></a>
+        <a class="btn btn-ghost" href="#endless">The Endless Secret →</a>
+      </div>
+      <p class="hero-note">Free to play · Optional in-app purchases · Ads (removable)</p>
+    </div>
+    <div class="phones" aria-hidden="true">
+      <div class="phone phone-a"><img src="/assets/shot-gameplay.jpg" alt=""></div>
+      <div class="phone phone-b"><img src="/assets/shot-combo.jpg" alt=""></div>
+    </div>
+  </div>
+  <div class="container stats reveal">
+    <div class="stat"><b class="gold">82</b><span>block shapes</span></div>
+    <div class="stat"><b class="grad">4</b><span>worlds to conquer</span></div>
+    <div class="stat"><b class="gold">7</b><span>block skins</span></div>
+    <div class="stat"><b class="grad">5</b><span>hidden seals</span></div>
+    <div class="stat"><b class="gold">7-day</b><span>reward calendar</span></div>
+  </div>
+</header>
 
-    <!-- FEATURES -->
-    <section class="section" id="features">
-        <div class="section-inner">
-            <div class="section-label">WHY BLOCKBLITZ</div>
-            <h2 class="section-title">Every mechanic<br>is built to <span class="gradient-text">feel incredible.</span></h2>
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">Features</span>
+      <h2>Easy to learn. <span class="grad">Hard to put down.</span></h2>
+      <p class="section-lead">Everything in BlockBlitz is built around that "just one more round" feeling.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal"><div class="icon-badge t-pink">🗺️</div><h3>Campaign</h3><p>Climb through four worlds (Starter Street, Stellar Voyage, Neon Factory and Crown Circuit), each level with its own score and line goals, ice blocks and tougher pieces.</p></div>
+      <div class="card reveal"><div class="icon-badge t-gold">🔥</div><h3>Combos & perfect clears</h3><p>Clear on back-to-back moves to multiply your score. Wipe the whole board for a 1,000-point perfect clear and a free Pulse Bomb.</p></div>
+      <div class="card reveal"><div class="icon-badge t-violet">♾️</div><h3>Endless mode</h3><p>No goals, no limit. The deeper you score, the harder the pieces get, and five hidden seals wait to be broken.</p></div>
+      <div class="card reveal"><div class="icon-badge t-ember">💣</div><h3>Power-ups</h3><p><b>Pulse Bomb</b> blasts a 3-wide cross anywhere. <b>Magic Wand</b> clears your fullest line. <b>Rotate</b> turns a piece. Plus hints and rerolls when you're stuck.</p></div>
+      <div class="card reveal"><div class="icon-badge t-cyan">🏆</div><h3>Game Center</h3><p>Compete on three leaderboards: best campaign score, best Endless score, and the race to break all five seals.</p></div>
+      <div class="card reveal"><div class="icon-badge t-lime">✨</div><h3>Feels great</h3><p>Glossy blocks, satisfying sound effects, haptics, shatter and shockwave effects. Plays offline, with sound and vibration you can switch off.</p></div>
+    </div>
+  </div>
+</section>
 
-            <div class="features-grid">
-                <div class="feature-card fc-large">
-                    <div class="fc-glow fc-glow-purple"></div>
-                    <div class="fc-icon">⚡</div>
-                    <h3>Combo Multipliers</h3>
-                    <p>Clear lines back to back and watch your score explode. Each consecutive clear multiplies your points — a x4 combo is 400% more points. Chain clears are the only way to the top.</p>
-                    <div class="combo-demo">
-                        <div class="combo-step">x1</div>
-                        <div class="combo-arrow">→</div>
-                        <div class="combo-step active">x2</div>
-                        <div class="combo-arrow">→</div>
-                        <div class="combo-step">x3</div>
-                        <div class="combo-arrow">→</div>
-                        <div class="combo-step glow-step">x4 🔥</div>
-                    </div>
-                </div>
+<!-- ENDLESS SECRET -->
+<section id="endless" class="secret">
+  <div class="container grid-2">
+    <div class="reveal">
+      <span class="eyebrow" style="color:var(--violet)">The Endless Secret</span>
+      <p class="claim"><span class="gold">No one has cracked it yet.</span></p>
+      <p class="section-lead">Five hidden seals guard the end of Endless. Break them <b>in order</b>, in <b>a single run</b>. Each seal shows only a riddle: you have to work out what it means.</p>
+      <div class="seals">
+        <div class="seal"><div class="rune open">I</div><div><b>The Cross</b><i>“Strike where the paths meet.”</i></div></div>
+        <div class="seal"><div class="rune open">II</div><div><b>The Echo</b><i>“Three voices, one after another.”</i></div></div>
+        <div class="seal"><div class="rune next">?</div><div><b>Seal III</b><i>“Hold every corner of the world at once.”</i></div></div>
+        <div class="seal"><div class="rune locked">🔒</div><div><b>Seal IV</b><i>Revealed when you get closer…</i></div></div>
+        <div class="seal"><div class="rune locked">🔒</div><div><b>Seal V</b><i>Revealed when you get closer…</i></div></div>
+      </div>
+      <div class="depths">
+        <span class="depth">Depth 1 · warm-up pieces</span>
+        <span class="depth">Depth 2 · 2,000 pts</span>
+        <span class="depth">Depth 3 · 6,000 pts</span>
+        <span class="depth">Depth 4 · 12,000 pts · rare shapes</span>
+      </div>
+      <p class="hero-note">Power-ups never break a seal. Crack it to earn 3,000 coins, 20 stars and the legendary Royal Gems skin.</p>
+    </div>
+    <div class="shot-wrap reveal">
+      <img class="shot" src="/assets/shot-endless-secret.jpg" alt="The Endless Secret challenge screen listing the five seals">
+      <img class="shot" src="/assets/shot-endless.jpg" alt="Endless mode with the seal tracker and depth badge">
+    </div>
+  </div>
+</section>
 
-                <div class="feature-card">
-                    <div class="fc-glow fc-glow-cyan"></div>
-                    <div class="fc-icon">🎨</div>
-                    <h3>Skin Collection</h3>
-                    <p>Unlock five unique block skins — Classic, Glass, Neon, Magma, and Snow — each with a distinct visual personality.</p>
-                </div>
+<!-- SKINS -->
+<section id="skins">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">Block Skins</span>
+      <h2>Make every block <span class="gold">yours.</span></h2>
+      <p class="section-lead">Seven hand-crafted materials, from glossy candy to cut gems. Unlock them free as you level up, or grab them early with coins.</p>
+    </div>
+    <div class="skins">
+      <div class="card skin reveal"><img src="/assets/skin-classic.jpg" alt="Candy skin" loading="lazy"><div class="skin-meta"><h3>Candy</h3><span class="rarity r-common">COMMON</span></div><p>Glossy candy blocks. Free from the start.</p></div>
+      <div class="card skin reveal"><img src="/assets/skin-glass.jpg" alt="Crystal skin" loading="lazy"><div class="skin-meta"><h3>Crystal</h3><span class="rarity r-rare">RARE</span></div><p>Clear glass that catches the light.</p></div>
+      <div class="card skin reveal"><img src="/assets/skin-neon.jpg" alt="Neon skin" loading="lazy"><div class="skin-meta"><h3>Neon</h3><span class="rarity r-rare">RARE</span></div><p>Glowing tubes straight from an arcade.</p></div>
+      <div class="card skin reveal"><img src="/assets/skin-wood.jpg" alt="Oak skin" loading="lazy"><div class="skin-meta"><h3>Oak</h3><span class="rarity r-rare">RARE</span></div><p>Stained wood with real grain and knots.</p></div>
+      <div class="card skin reveal"><img src="/assets/skin-snow.jpg" alt="Frost skin" loading="lazy"><div class="skin-meta"><h3>Frost</h3><span class="rarity r-epic">EPIC</span></div><p>Frozen ice with a fresh snow cap.</p></div>
+      <div class="card skin reveal"><img src="/assets/skin-magma.jpg" alt="Lava skin" loading="lazy"><div class="skin-meta"><h3>Lava</h3><span class="rarity r-epic">EPIC</span></div><p>Volcanic rock split by molten cracks.</p></div>
+      <div class="card skin legendary reveal"><img src="/assets/skin-jewel.jpg" alt="Royal Gems skin" loading="lazy"><div class="skin-meta"><h3>Royal Gems</h3><span class="rarity r-legendary">LEGENDARY</span></div><p>Cut jewels set in polished gold.</p></div>
+      <div class="card skin reveal" style="display:flex;flex-direction:column;justify-content:center;text-align:center">
+        <h3 style="font-size:22px">Preview before you unlock</h3>
+        <p style="font-size:15px">Every skin can be tried on a sample board in the in-game gallery first.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <div class="feature-card">
-                    <div class="fc-glow fc-glow-pink"></div>
-                    <div class="fc-icon">📋</div>
-                    <h3>Daily Missions</h3>
-                    <p>Fresh challenges every midnight. Complete them to earn Magic Wands, God Mode power-ups, and bonus coins.</p>
-                </div>
+<!-- REWARDS -->
+<section id="rewards">
+  <div class="container grid-2">
+    <div class="shot-wrap reveal order-first-mobile">
+      <img class="shot" src="/assets/shot-daily-reward.jpg" alt="Seven-day daily reward calendar" loading="lazy">
+      <img class="shot" src="/assets/shot-missions.jpg" alt="Daily missions with bonus chest" loading="lazy">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Daily Rewards</span>
+      <h2>Come back. <span class="grad">Get paid.</span></h2>
+      <p class="section-lead">Every day brings something new to claim.</p>
+      <div class="calendar">
+        <div class="day"><small>DAY 1</small><b>50 coins</b></div>
+        <div class="day"><small>DAY 2</small><b>2 stars</b></div>
+        <div class="day"><small>DAY 3</small><b>100 coins</b></div>
+        <div class="day"><small>DAY 4</small><b>Bomb</b></div>
+        <div class="day"><small>DAY 5</small><b>150 coins</b></div>
+        <div class="day"><small>DAY 6</small><b>3 stars</b></div>
+        <div class="day big"><small>DAY 7</small><b>300 + Wand</b></div>
+      </div>
+      <ul class="checks">
+        <li><span><b>7-day streak calendar</b>: the reward grows every day, with a big prize on day 7.</span></li>
+        <li><span><b>Daily missions</b>: four new goals each day, plus a bonus chest when you finish all of them.</span></li>
+        <li><span><b>Coin Bank</b>: fills up as you clear lines with combos. Smash it when it's full.</span></li>
+        <li><span><b>Friendly reminders</b> (optional): one nudge when your reward is ready. No spam.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-                <div class="feature-card">
-                    <div class="fc-glow fc-glow-yellow"></div>
-                    <div class="fc-icon">🏆</div>
-                    <h3>Game Center Leaderboards</h3>
-                    <p>Your score lives on a global board. Compete with players worldwide and prove your puzzle skills.</p>
-                </div>
+<!-- HOW TO PLAY -->
+<section id="how">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">How to play</span>
+      <h2>Three steps. <span class="gold">Endless strategy.</span></h2>
+    </div>
+    <div class="steps">
+      <div class="card step reveal"><div class="icon-badge t-cyan">👆</div><h3>Drag a piece</h3><p>Pick one of the three pieces in your tray and drag it onto the 8×8 board. A preview shows exactly where it lands.</p></div>
+      <div class="card step reveal"><div class="icon-badge t-pink">💥</div><h3>Clear lines</h3><p>Fill a full row or column to clear it. Clear several at once, or on back-to-back moves, for huge combos.</p></div>
+      <div class="card step reveal"><div class="icon-badge t-gold">⭐</div><h3>Beat the goal</h3><p>Hit the level's score and line goals before you run out of space. Finish fast without continuing for 3 stars.</p></div>
+    </div>
+  </div>
+</section>
 
-                <div class="feature-card">
-                    <div class="fc-glow fc-glow-orange"></div>
-                    <div class="fc-icon">🔥</div>
-                    <h3>Daily Streak Rewards</h3>
-                    <p>Log in every day and claim escalating star bonuses. Miss a day and the streak resets — no pressure, but the rewards are worth it.</p>
-                </div>
+<!-- WHAT'S NEW -->
+<section id="whats-new">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">What's New</span>
+      <h2>Version 1.0: <span class="grad">the launch.</span></h2>
+    </div>
+    <div class="changelog card reveal">
+      <div class="release-head"><b>1.0</b><span>Launch release</span></div>
+      <ul>
+        <li><span class="tag new">NEW</span><span><b>The Endless Secret:</b> five hidden seals with riddles, difficulty depths and a legendary reward.</span></li>
+        <li><span class="tag new">NEW</span><span><b>82 block shapes</b>, including every rotation and mirror of each family, plus rare expert pieces.</span></li>
+        <li><span class="tag new">NEW</span><span><b>Seven block skins</b> (Candy, Crystal, Neon, Oak, Frost, Lava, Royal Gems) with a preview gallery.</span></li>
+        <li><span class="tag new">NEW</span><span><b>Pulse Bomb</b>: drop it anywhere to blast a 3-wide cross, with a live preview of what it destroys.</span></li>
+        <li><span class="tag new">NEW</span><span><b>7-day reward calendar</b>, rotating daily missions with a bonus chest, and the Coin Bank.</span></li>
+        <li><span class="tag new">NEW</span><span><b>Game Center leaderboards</b> for campaign, Endless and seals.</span></li>
+        <li><span class="tag better">POLISH</span><span>"Midnight Neon" look, springy controls, new sound effects, shatter and shockwave effects.</span></li>
+        <li><span class="tag better">POLISH</span><span>Skill-based stars: finish without continuing and within par moves for 3 stars.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-                <div class="feature-card fc-large">
-                    <div class="fc-glow fc-glow-cyan"></div>
-                    <div class="fc-icon">🎁</div>
-                    <h3>BlockBlitz Store</h3>
-                    <p>Spend your in-game JE on Magic Wands that clear 3×3 areas, Rotate Wands that spin any piece, and the Quantum Box — a mystery loot box with random rare rewards including stars and skins.</p>
-                    <div class="store-preview-row">
-                        <div class="store-preview-item sp-purple">
-                            <span>🪄</span>
-                            <span>Magic Wand</span>
-                        </div>
-                        <div class="store-preview-item sp-green">
-                            <span>🔄</span>
-                            <span>Rotate Wand</span>
-                        </div>
-                        <div class="store-preview-item sp-cyan">
-                            <span>🎁</span>
-                            <span>Quantum Box</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions?</h2>
+    </div>
+    <div class="faq">
+      <details class="reveal"><summary>Is BlockBlitz free?</summary><p>Yes. The whole game is free to play. It shows ads and offers optional purchases: Remove Ads, a one-time Starter Pack and coin packs.</p></details>
+      <details class="reveal"><summary>What does Remove Ads do?</summary><p>It removes banner and between-level ads forever, and makes every "watch a video" reward (continues, hints, rerolls, 2× coins) free. You can restore it on a new device from Settings → Restore purchases.</p></details>
+      <details class="reveal"><summary>Can I play offline?</summary><p>Yes, the game works without a connection. Ads, Game Center and purchases need internet.</p></details>
+      <details class="reveal"><summary>Has anyone cracked the Endless Secret?</summary><p>Not yet. The seals leaderboard in Game Center shows who has come closest. Five seals, in order, in one run.</p></details>
+      <details class="reveal"><summary>Where is my progress saved?</summary><p>On your iPhone. Your coin balance is also kept in the iPhone's secure Keychain so it survives a reinstall. Purchases are tied to your Apple Account and can always be restored.</p></details>
+      <details class="reveal"><summary>How do I contact you?</summary><p>Email <a href="mailto:support@blockblitz.ma">support@blockblitz.ma</a> or use Settings → Contact support in the app (it fills in your device details for us). See the <a href="/support.html">Support page</a> for quick fixes.</p></details>
+    </div>
+  </div>
+</section>
 
-    <!-- GAME MODES -->
-    <section class="section modes-section" id="modes">
-        <div class="section-inner">
-            <div class="section-label">GAME MODES</div>
-            <h2 class="section-title">One game.<br><span class="gradient-text">Two ways to play.</span></h2>
-
-            <div class="modes-grid">
-                <div class="mode-card mode-endless">
-                    <div class="mode-bg-glow mode-bg-blue"></div>
-                    <div class="mode-header">
-                        <div class="mode-badge mode-badge-blue">ENDLESS</div>
-                    </div>
-                    <h3>Endless Mode</h3>
-                    <p>No clock. No level cap. Just you, the board, and the question of how long you can keep it going. Place pieces, clear lines, survive. Your high score is the only goal.</p>
-                    <ul class="mode-list">
-                        <li>♾️ Infinite gameplay — no lives, no timer</li>
-                        <li>⚡ Combo multipliers escalate without limit</li>
-                        <li>🏆 Score tracked on global leaderboard</li>
-                        <li>📈 Personal best displayed in real-time</li>
-                    </ul>
-                </div>
-
-                <div class="mode-card mode-level">
-                    <div class="mode-bg-glow mode-bg-purple"></div>
-                    <div class="mode-header">
-                        <div class="mode-badge mode-badge-purple">LEVEL</div>
-                    </div>
-                    <h3>Level Mode</h3>
-                    <p>Structured challenge with escalating difficulty. Each level has a target score and a piece limit. Finish efficiently to earn 3 stars. 150+ levels to conquer.</p>
-                    <ul class="mode-list">
-                        <li>⭐ Earn 1–3 stars per level</li>
-                        <li>🎯 Target score and line objectives</li>
-                        <li>📍 150+ levels unlocking progressively</li>
-                        <li>👑 Highest level tracked on your profile</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SKINS SHOWCASE -->
-    <section class="section skins-section">
-        <div class="section-inner">
-            <div class="section-label">COLLECTIBLES</div>
-            <h2 class="section-title">Five skins.<br><span class="gradient-text">Endless style.</span></h2>
-            <p class="section-subtitle">Earn in-game JE coins, unlock skins from the store, and make your board your own.</p>
-
-            <div class="skins-showcase">
-                <div class="showcase-skin ss-classic">
-                    <div class="ss-block">◼</div>
-                    <div class="ss-name">Classic</div>
-                    <div class="ss-tag free">Free</div>
-                </div>
-                <div class="showcase-skin ss-glass">
-                    <div class="ss-block">◼</div>
-                    <div class="ss-name">Glass</div>
-                    <div class="ss-tag">1,500 JE</div>
-                </div>
-                <div class="showcase-skin ss-neon">
-                    <div class="ss-block">◼</div>
-                    <div class="ss-name">Neon</div>
-                    <div class="ss-tag">1,500 JE</div>
-                </div>
-                <div class="showcase-skin ss-magma">
-                    <div class="ss-block">◼</div>
-                    <div class="ss-name">Magma</div>
-                    <div class="ss-tag">1,500 JE</div>
-                </div>
-                <div class="showcase-skin ss-snow">
-                    <div class="ss-block">◼</div>
-                    <div class="ss-name">Snow</div>
-                    <div class="ss-tag">1,500 JE</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FINAL CTA -->
-    <section class="cta-section">
-        <div class="cta-orb cta-orb-1"></div>
-        <div class="cta-orb cta-orb-2"></div>
-        <div class="cta-inner">
-            <div class="cta-rating">
-                <span class="stars-row">★★★★★</span>
-            </div>
-            <h2>Ready to climb<br>the <span class="gradient-text">leaderboard?</span></h2>
-            <p>Free to download. No sign-up required. Just pure block puzzle action from the first drop.</p>
-            <a href="#" class="btn btn-primary btn-xl">
-                <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
-                    <path d="M14.5 10.6c-.1-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.5.8-3.1.8-.7 0-1.7-.8-2.8-.7-1.4 0-2.7.8-3.5 2.1-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.5 2.2 2.6 2.1 1-.1 1.4-.7 2.7-.7 1.2 0 1.6.7 2.7.6 1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.3 0 0-2.1-.8-2.1-3.5z" fill="white"/>
-                    <path d="M12.4 4.1c.6-.7 1-1.7.9-2.7-.9.1-2 .6-2.6 1.3-.6.6-1.1 1.7-.9 2.7 1 .1 1.9-.5 2.6-1.3z" fill="white"/>
-                </svg>
-                Download on App Store — Free
-            </a>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-inner">
-            <div class="footer-left">
-                <a href="/" class="logo">BlockBlitz</a>
-                <p>The ultimate neon block puzzle experience.</p>
-            </div>
-            <div class="footer-links">
-                <a href="/about.html">About</a>
-                <a href="/privacy.html">Privacy Policy</a>
-                <a href="/terms.html">Terms of Service</a>
-                <a href="mailto:support@blockblitz.ma">Support</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 BlockBlitz. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // ── Sticky nav ──
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 20);
-        });
-
-        // ── Scroll-reveal ──
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.feature-card, .mode-card, .showcase-skin').forEach(el => observer.observe(el));
-
-        // ── Snow effect ──
-        const canvas = document.getElementById('snow-canvas');
-        const ctx    = canvas.getContext('2d');
-
-        let W = window.innerWidth;
-        let H = window.innerHeight;
-        canvas.width  = W;
-        canvas.height = H;
-
-        window.addEventListener('resize', () => {
-            W = canvas.width  = window.innerWidth;
-            H = canvas.height = window.innerHeight;
-        });
-
-        const FLAKE_COUNT = 160;
-
-        // Each flake: x, y, r (radius), speed, drift (horizontal sway), sway phase, opacity, twinkle speed
-        const flakes = Array.from({ length: FLAKE_COUNT }, () => makeFlake(true));
-
-        function makeFlake(randomY = false) {
-            const r = Math.random() * 2.8 + 0.6;          // 0.6 – 3.4 px
-            return {
-                x:      Math.random() * W,
-                y:      randomY ? Math.random() * H : -r * 2,
-                r,
-                speed:  Math.random() * 0.9 + 0.35,       // fall speed
-                drift:  Math.random() * 0.4 - 0.2,        // horizontal creep
-                phase:  Math.random() * Math.PI * 2,      // sway phase offset
-                amp:    Math.random() * 0.6 + 0.2,        // sway amplitude
-                opBase: Math.random() * 0.45 + 0.25,      // 0.25–0.7
-                opDelta:Math.random() * 0.015 + 0.003,    // twinkle speed
-                opDir:  1,
-                op:     0,
-            };
-        }
-
-        let tick = 0;
-
-        function drawSnow() {
-            ctx.clearRect(0, 0, W, H);
-            tick += 0.012;
-
-            for (const f of flakes) {
-                // Twinkle
-                f.op += f.opDelta * f.opDir;
-                if (f.op > f.opBase + 0.15) f.opDir = -1;
-                if (f.op < f.opBase - 0.15) f.opDir =  1;
-                const alpha = Math.max(0.05, Math.min(0.85, f.op));
-
-                // Sway
-                const sway = Math.sin(tick + f.phase) * f.amp;
-
-                // Draw — larger flakes get a subtle neon-cyan tint; tiny ones stay white
-                const tint = f.r > 2.2 ? `rgba(180, 240, 255, ${alpha})` : `rgba(255, 255, 255, ${alpha})`;
-                ctx.beginPath();
-                ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
-                ctx.fillStyle = tint;
-
-                // Soft glow for bigger flakes
-                if (f.r > 2) {
-                    ctx.shadowColor  = 'rgba(0, 243, 255, 0.5)';
-                    ctx.shadowBlur   = f.r * 3;
-                } else {
-                    ctx.shadowBlur = 0;
-                }
-                ctx.fill();
-
-                // Move
-                f.y += f.speed;
-                f.x += f.drift + sway * 0.04;
-
-                // Reset when off-screen
-                if (f.y > H + 10 || f.x < -20 || f.x > W + 20) {
-                    Object.assign(f, makeFlake(false));
-                }
-            }
-
-            ctx.shadowBlur = 0;
-            requestAnimationFrame(drawSnow);
-        }
-
-        drawSnow();
-    </script>
+<!-- DOWNLOAD -->
+<section id="download">
+  <div class="container">
+    <div class="cta reveal">
+      <img src="/assets/icon-512.png" alt="BlockBlitz app icon">
+      <h2>Ready to <span class="grad">blitz?</span></h2>
+      <p class="section-lead" style="margin:0 auto 26px">BlockBlitz is coming soon to the App Store for iPhone.</p>
+      <a class="appstore-badge" href="#download"><svg viewBox="0 0 20 20" fill="white" aria-hidden="true"><path d="M14.5 10.6c-.1-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.5.8-3.1.8-.7 0-1.7-.8-2.8-.7-1.4 0-2.7.8-3.5 2.1-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.5 2.2 2.6 2.1 1-.1 1.4-.7 2.7-.7 1.2 0 1.6.7 2.7.6 1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.3 0 0-2.1-.8-2.1-3.5z"/><path d="M12.4 4.1c.6-.7 1-1.7.9-2.7-.9.1-2 .6-2.6 1.3-.6.6-1.1 1.7-.9 2.7 1 .1 1.9-.5 2.6-1.3z"/></svg><span><small>Coming soon on the</small><strong>App Store</strong></span></a>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="container footer-grid">
+    <a class="brand" href="/"><img src="/assets/icon-512.png" alt=""><span>BLOCK<span class="blitz">BLITZ</span></span></a>
+    <div class="footer-links">
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Use</a>
+      <a href="/about.html">About</a>
+      <a href="mailto:support@blockblitz.ma">support@blockblitz.ma</a>
+    </div>
+    <span>© 2026 BlockBlitz. Apple, the Apple logo and App Store are trademarks of Apple Inc.</span>
+  </div>
+</footer>
+<script>
+  // Reveal sections as they scroll into view.
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
 </body>
 </html>

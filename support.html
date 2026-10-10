@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support · BlockBlitz</title>
+<meta name="description" content="Help with BlockBlitz: purchases, ads, Game Center, notifications and contact.">
+<meta name="theme-color" content="#0f0828">
+<meta property="og:title" content="Support · BlockBlitz">
+<meta property="og:description" content="Help with BlockBlitz: purchases, ads, Game Center, notifications and contact.">
+<meta property="og:image" content="https://blockblitz.ma/assets/og-image.jpg">
+<meta property="og:url" content="https://blockblitz.ma/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/assets/favicon-64.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/"><img src="/assets/icon-512.png" alt=""><span>BLOCK<span class="blitz">BLITZ</span></span></a>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#endless">Endless Secret</a>
+      <a href="/#skins">Skins</a>
+      <a href="/#whats-new">What's New</a>
+      <a href="/support.html">Support</a>
+    </div>
+    <a class="btn btn-primary btn-small" href="/#download">Coming soon</a>
+  </div>
+</nav>
+<main class="container page">
+<span class="eyebrow">Support</span>
+<h1>How can we <span class="grad">help?</span></h1>
+<p>Most questions are answered below. If not, email us at <a href="mailto:support@blockblitz.ma">support@blockblitz.ma</a>. The quickest way is <strong>Settings → Contact support</strong> in the app, which adds your app version and device for us. We usually reply within 2 business days.</p>
+
+<h2>Purchases</h2>
+<div class="faq" style="margin-top:14px">
+<details><summary>I bought Remove Ads but still see ads</summary><p>Open <strong>Settings → Restore purchases</strong> in the app while signed in to the same Apple Account you bought with. Make sure you're connected to the internet.</p></details>
+<details><summary>My coins didn't arrive after buying a pack</summary><p>Close and reopen the app with an internet connection: unfinished purchases are delivered automatically on launch. If they still don't appear, email us the date of the purchase (from your Apple receipt).</p></details>
+<details><summary>How do I get a refund?</summary><p>Refunds are handled by Apple. Go to <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>, sign in, and choose the purchase.</p></details>
+</div>
+
+<h2>Ads & rewards</h2>
+<div class="faq" style="margin-top:14px">
+<details><summary>"Video not ready yet" when I tap a reward</summary><p>Videos need a connection and occasionally aren't available. Wait a few seconds and try again. With Remove Ads, all video rewards are free and instant.</p></details>
+<details><summary>How do I change my ad privacy choices?</summary><p>In the EEA/UK: <strong>Settings → Ad privacy choices</strong>. For personalized ads on any iPhone: iOS <strong>Settings → Privacy &amp; Security → Tracking</strong>.</p></details>
+<details><summary>I didn't get my daily reward</summary><p>The daily reward opens on the home screen once per day (it resets at midnight, local time). Keep your streak by opening the app every day: day 7 is the big one.</p></details>
+</div>
+
+<h2>Game</h2>
+<div class="faq" style="margin-top:14px">
+<details><summary>Scores don't appear on the leaderboard</summary><p>Sign in to Game Center in iOS <strong>Settings → Game Center</strong>, then reopen the app. New scores can take a few minutes to show.</p></details>
+<details><summary>How do the Endless seals work?</summary><p>Each seal shows a riddle describing what you need to do on the board. They must be broken in order, in one Endless run; power-ups don't count. Continuing after a game over keeps your seals; starting a new run resets them.</p></details>
+<details><summary>Will I lose my progress if I change phones?</summary><p>Progress is stored on your iPhone. Purchases can be restored on any device with your Apple Account. Your coin balance survives a reinstall on the same device.</p></details>
+<details><summary>How do I turn off reminders, sound or vibration?</summary><p>In the app: <strong>Settings → Preferences</strong>. Reminders can also be changed in iOS Settings → Notifications → BlockBlitz.</p></details>
+</div>
+
+<div class="card">
+<h3>Still stuck?</h3>
+<p>Email <a href="mailto:support@blockblitz.ma">support@blockblitz.ma</a> with your iPhone model, iOS version and a short description (a screenshot helps).</p>
+</div>
+</main>
+<footer>
+  <div class="container footer-grid">
+    <a class="brand" href="/"><img src="/assets/icon-512.png" alt=""><span>BLOCK<span class="blitz">BLITZ</span></span></a>
+    <div class="footer-links">
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Use</a>
+      <a href="/about.html">About</a>
+      <a href="mailto:support@blockblitz.ma">support@blockblitz.ma</a>
+    </div>
+    <span>© 2026 BlockBlitz. Apple, the Apple logo and App Store are trademarks of Apple Inc.</span>
+  </div>
+</footer>
+<script>
+  // Reveal sections as they scroll into view.
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
